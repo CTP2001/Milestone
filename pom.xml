@@ -110,7 +110,7 @@
         <configuration>
           <encoding>UTF-8</encoding>
           <failsOnError>false</failsOnError>
-          <ouputFile>reports/checkstyle/checkstyle-result.xml</outputFile>
+          <outputFile>reports/checkstyle/checkstyle-result.xml</outputFile>
         </configuration>
       </plugin>
 
