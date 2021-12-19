@@ -63,5 +63,58 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-pmd-plugin</artifactId>
+        <version>3.15.0</version>
+        <configuration>
+          <linkXref>true</linkXref>
+          <sourceEncoding>utf-8</sourceEncoding>
+          <minimumTokens>100</minimumTokens>
+          <targetJdk>1.8</targetJdk>
+          <format>xml</format>
+          <outputDirectory>reports/pmd/</outputDirectory>
+          <targetDirectory>reports/pmd/</targetDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <phase>validate</phase>
+            <goals><goal>pmd</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>findbugs-maven-plugin</artifactId>
+        <version>3.0.5</version>
+        <configuration>
+          <xmlOutput>true</xmlOutput>
+          <effort>Max</effort>
+          <threshold>Low</threshold>
+          <xmlOutputDirectory>reports/findbugs</xmlOutputDirectory>
+        </configuration>
+        <executions>
+          <execution>
+            <goals><goal>findbugs</goal></goals>
+          </execution>
+        </executions>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.2</version>
+        <configuration>
+          <encoding>UTF-8</encoding>
+          <failsOnError>false</failsOnError>
+          <ouputFile>reports/checkstyle/checkstyle-result.xml</outputFile>
+        </configuration>
+      </plugin>
+
+    </plugins>
+    
   </build>
 </project>
