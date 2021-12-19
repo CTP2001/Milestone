@@ -81,6 +81,32 @@
             </execution>
           </executions>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-checkstyle-plugin</artifactId>
+          <version>3.1.2</version>
+          <configuration>
+            <encoding>UTF-8</encoding>
+            <failsOnError>false</failsOnError>
+            <outputFile>reports/checkstyle/checkstyle-result.xml</outputFile>
+          </configuration>
+        </plugin>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>findbugs-maven-plugin</artifactId>
+          <version>3.0.6-SNAPSHOT</version>
+          <configuration>
+            <xmlOutput>true</xmlOutput>
+            <effort>Max</effort>
+            <threshold>Low</threshold>
+            <xmlOutputDirectory>reports/findbugs</xmlOutputDirectory>
+          </configuration>
+          <executions>
+            <execution>
+              <goals><goal>findbugs</goal></goals>
+            </execution>
+          </executions>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
